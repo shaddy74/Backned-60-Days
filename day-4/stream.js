@@ -9,7 +9,7 @@ const readableStream = new Readable(
 
 const writeableStream =new Writable({
     write(streamData){
-        console.log("Writing...", streamData)
+        console.log("Writing...", streamData);
 
     }
 })
@@ -17,10 +17,8 @@ const writeableStream =new Writable({
 
 readableStream.on("data", (chunk) => {
 
-    console.log("CHUNK", chunk.toString())
+    console.log("CHUNK", chunk.toString());
     writeableStream.write(chunk)
-})
+});
 
-console.log(readableStream.push("Hello Jee"))
-
-05:08:50
+console.log(readableStream.push("Hello Jee"));

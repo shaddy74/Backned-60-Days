@@ -1,5 +1,7 @@
 const http = require('http')
 const fs = require('fs')
+const {Transform, pipeline} = require('stream');
+const { error } = require('console');
 const PORT = 3000;
 
 const server = http.createServer((req, res) => {
@@ -38,6 +40,28 @@ const server = http.createServer((req, res) => {
 
 
 
+    const readStream = fs.createReadStream("sample.txt");
+    const writeStream = fs.createWriteStream("output.txt");
+    const transformStream = new Transform({
+        transform(chunk, encoding, callback){
+            const modifiedWord = chunk.toString().toUpperCase().replaceAll(/ipsum/gi, "Shadab"); 
+            callback(null, modifiedWord)
+        }
+    })
+
+    // !Bad Approach ❌
+    // readStream.on("data", (chunk) => {
+    //     const modifiedWord = chunk.toString().toUpperCase().replaceAll(/ipsum/gi, "Shadab");
+    //     writeStream.write(modifiedWord)
+    // })
+    // res.end();
+
+    // Good Approach✅
+    // readStream.pipe(transformStream).pipe()
+    pipeline(readStream, transformStream, pipeline, (err)=>{
+        console.log(err)
+    })
+    res.end()
 })
 
 server.listen(PORT, () => {
