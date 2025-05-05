@@ -11,6 +11,15 @@ app.get("/", (req, res) => {
 
 // Industry Standard
 app.get("/api/v1/users", (req, res) => {
+    const { name } = req.query;
+
+    if (name) {
+        const user = userData.filter((user) => {
+            return user.name === name;
+        })
+        res.status(200).send(user)
+    }
+
     res.status(200).send(userData)
 })
 

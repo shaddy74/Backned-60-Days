@@ -12,6 +12,7 @@
   "type": "module",
   "description": "",
   "dependencies": {
+    "debug": "^4.4.0",
     "express": "^5.1.0"
   },
   "devDependencies": {
