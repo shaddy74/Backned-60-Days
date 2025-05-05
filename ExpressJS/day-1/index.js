@@ -23,6 +23,17 @@ app.get("/api/v1/users", (req, res) => {
     res.status(200).send(userData)
 })
 
+// router params
+app.get('/api/v1/users/:id', (req, res) => {
+    const { id } = req.params;
+    const parsedId = parseInt(id)
+
+    const user = userData.find((user) => user.id === parsedId)
+
+
+    res.status(200).send(user)
+})
+
 
 
 app.listen(PORT, (req, res) => {
