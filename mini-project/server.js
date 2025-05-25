@@ -4,6 +4,7 @@ import privateroutes from "./routes/private.route.js"
 import fs from "fs"
 import path from "path"
 import { fileURLToPath } from "url";
+import logMiddleware from "./middleware/log.middleware.js"
 
 const app = express();
 const PORT = 3000;
@@ -17,6 +18,9 @@ if(!fs.existsSync(path.join(__dirname,"logs"))){
 
 // Inbuilt Middleware
 app.use(express.json());
+
+// *Global Custom middleware
+app.use(logMiddleware)
 
 
 //middleare to routes
