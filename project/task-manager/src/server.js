@@ -3,7 +3,8 @@ import session from "express-session";
 import cookieParser from "cookie-parser"
 
 
-import authRoute from "../routes/auth.route.js";
+import authRoute from "./routes/auth.route.js";
+import taskRoute from "./routes/task.route.js"
 
 
 const app = express();
@@ -15,7 +16,7 @@ app.use(express.json())
 
 app.use(session(
     {
-        secret: "your-secret-key",
+        secret: "your_secret_key",
         resave: false,
         saveUninitialized: false,
         cookie: {
@@ -36,6 +37,7 @@ app.get("/", (req, res) => {
 
 
 app.use("/auth", authRoute)
+app.use("/task", taskRoute)
 
 
 

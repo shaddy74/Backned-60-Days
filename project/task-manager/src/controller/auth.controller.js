@@ -6,7 +6,7 @@ export const login = (req, res) => {
         return res.status(400).json({ error: "Username is required" })
     }
 
-    res.session.user = { username };
+    req.session.user = { username };
 
     res.cookie("username", username, { httpOnly: true, maxAge: 1000 * 62 * 62 * 24 });
     res.json({ message: "Login Successful", username });
