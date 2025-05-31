@@ -109,13 +109,7 @@ Welcome to the **Backend Development Mastery Course**! Over the next 60 days, yo
 ---
 
 ## **About the Instructor**
-- **Name**: Suraj Kumar Jha
-- **Handle**: @sigma_developer_
-- **Experience**: 
-  - Successfully taught over 8,000 students in JavaScript and Web Development.
-  - Managed and delivered complex client projects with heavy backend requirements.
-  - Conducted internships and courses focused on Backend and Full-Stack Development.
-- **Fun Fact**: Loves integrating AI to create innovative solutions for learners!
+- **Name**: Md Shadab Alam
 
 ---
 
