@@ -111,13 +111,7 @@ Welcome to the **Backend Development Mastery Course**! Over the next 60 days, yo
 ## **About the Instructor**
 - **Name**: Md Shadab Alam
 
----
-
-## **How to Enroll**
-- Join the **Backend Supremacy Course** today for only **₹1999**! 
-- Limited slots available—start your backend mastery journey now!
-
----
+------
 
 ## **Contact**
 - **Instagram**: https://www.instagram.com/shaddy._ar
