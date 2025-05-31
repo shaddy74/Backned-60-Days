@@ -126,5 +126,5 @@ Welcome to the **Backend Development Mastery Course**! Over the next 60 days, yo
 ---
 
 ## **Contact**
-- **Instagram**: https://www.instagram.com/shaddy_ar
+- **Instagram**: https://www.instagram.com/shaddy._ar
 - **Email**: sadab20012005@gmail.com
