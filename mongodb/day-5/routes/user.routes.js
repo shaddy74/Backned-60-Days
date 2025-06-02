@@ -30,10 +30,17 @@ router.post("/users", async (req, res) => {
 })
 
 // 2. Read
-router.get("/users", () => {
-    try{
-        
-    }catch (error) {
+router.get("/users", async (req, res) => {
+    try {
+        const users = await User.find()
+
+        res.status(200).json({
+            success: true,
+            data: users,
+            message: "User gets successfully"
+        })
+
+    } catch (error) {
         // console.log(error)
         res.status(500).json({
             success: false,
@@ -43,7 +50,34 @@ router.get("/users", () => {
 })
 
 // 3. Update
-router.put("/update-user", () => {
+router.put("/update-user/:id", async (req, res) => {
+
+    const { id } = req.params;
+    const { name, age, weight } = req.body;
+
+    try {
+        const updateUser = await User.findByIdAndUpdate(id, { name, age, weight }, { new: true, runValidators: true })
+        if (!updateUser) {
+            return res.status(401).json({
+                success: false,
+                message: "User not found"
+            })
+        }
+
+        res.status(200).json({
+            success: true,
+            user: updateUser,
+            message: "Updated Successfully"
+        })
+
+    } catch (error) {
+        // console.log(error)
+        res.status(500).json({
+            success: false,
+            message: error.message
+        })
+    }
+
 
 })
 
