@@ -1,4 +1,5 @@
 
+import session from "express-session";
 import { loginUser, registerUser } from "../services/user.service.js";
 
 
@@ -43,4 +44,6 @@ export const login = async (req, res) => {
         })
     }
 }
-export const logout = () => { }
+export const logout = (req, res) => {
+   
+};
