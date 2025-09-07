@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get('/dashboard',authMiddleware ,(req,res)=>{
     res.status(200).send({
-        message:`Welcome to the Dashboard ${req.user.name}`
+        message:`Welcome to the Private Dashboard ${req.user.name}`
     })
 })
 
