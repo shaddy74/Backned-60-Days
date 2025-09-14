@@ -60,6 +60,7 @@ const server = http.createServer((req, res) => {
     // readStream.pipe(transformStream).pipe()
     pipeline(readStream, transformStream, pipeline, (err)=>{
         console.log(err)
+        console.log(err)
     })
     res.end()
 })
